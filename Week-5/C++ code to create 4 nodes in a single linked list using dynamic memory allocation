@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node* next;
+};
+
+int main()
+{
+    Node *n1, *n2, *n3, *n4;
+
+    // Dynamic memory allocation
+    n1 = new Node();
+    n2 = new Node();
+    n3 = new Node();
+    n4 = new Node();
+
+    // Assign data
+    n1->data = 10;
+    n2->data = 20;
+    n3->data = 30;
+    n4->data = 40;
+
+    // Link nodes
+    n1->next = n2;
+    n2->next = n3;
+    n3->next = n4;
+    n4->next = NULL;
+
+    // Traversing the linked list
+    Node* temp = n1;
+    while(temp != NULL)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+
+    return 0;
+}
